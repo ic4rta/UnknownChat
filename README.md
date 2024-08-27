@@ -1,5 +1,11 @@
 **UnknownChat is a private and temporary chat service hosted on tor that allows integration with proxychains and socat.**
 
+## Install packages
+### NetBSD
+```ruby
+pkgin install socat tor
+```
+
 ## Manual deployment
 
 1. Modify the local port of “HiddenServicePort” in the torrc file
