@@ -13,7 +13,8 @@ modificar_archivos() {
 ejecutar(){
 	socat TCP-LISTEN:$puerto_tor,fork,bind=127.0.0.1 TCP:127.0.0.1:$puerto_local &
 	tor -f config/torrc &
-	proxychains -f config/proxychains.conf web/node server.js $puerto_local &
+	cd web
+	proxychains -f ../config/proxychains.conf node server.js $puerto_local &
 }
 
 modificar_archivos $puerto_local $puerto_tor
