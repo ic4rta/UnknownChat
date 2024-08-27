@@ -28,3 +28,6 @@ socat TCP-LISTEN:<tor_port>,fork,bind=127.0.0.1 TCP:127.0.0.1:<local_port>
 - If the service does not work, change the local port to `80`.
 --- 
 To do: Implement the script correctly (unknown-chat.sh)
+
+- Adding a CLI argument to deploy services
+- Adding a CLI argument to stop all services (socat, node, proxychains, tor), this includes deleting logs
