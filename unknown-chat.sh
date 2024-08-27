@@ -4,7 +4,9 @@ puerto_local="$1"
 puerto_tor="$2"
 
 modificar_archivos() {
+	# busca y remplaza el puerto por que el que estara en escucha el servidor web local
     sed -i "s/\(HiddenServicePort \)[0-9]\{1,5\}/\1$puerto_local/" config/torrc
+    # busca y remplaza el puerto por que el que estara en escucha tor
     sed -i "s/\(HiddenServicePort $puerto_local 127.0.0.1:\)[0-9]*$/\1$puerto_tor/" config/torrc
 }
 
