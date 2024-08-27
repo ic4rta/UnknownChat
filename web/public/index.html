@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="login">
+        <h2>UnknownChat</h2>
+        <input type="text" id="sessionId" placeholder="Session ID" required>
+        <input type="text" id="nickname" placeholder="Nickname" required>
+        <button id="loginButton">Login</button>
+        <p id="loginError" class="error"></p>
+    </div>
+
+    <div id="chat" style="display:none;">
+        <div id="chatContainer">
+            <div id="userList"></div>
+            <div id="messagesContainer">
+                <div id="messages"></div>
+                <div id="messageContainer">
+                    <input type="text" id="message" placeholder="Type a message" required>
+                    <button id="sendButton">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <meta name="csrf-token" content="<%= csrfToken %>">
+</body>
+</html>
