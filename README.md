@@ -5,6 +5,10 @@
 ```ruby
 pkgin install socat tor
 ```
+### Debian
+```ruby
+apt install socat tor proxychains4
+```
 
 ## Manual deployment
 

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Verificar si Node.js está instalado
+if ! command -v node >/dev/null 2>&1; then
+    echo "Node.js no está instalado. Instálalo antes de continuar"
+    exit 1
+fi
+
+# Verificar si npm está instalado
+if ! command -v npm >/dev/null 2>&1; then
+    echo "npm no está instalado. Instálalo antes de continuar"
+    exit 1
+fi
+
+# Navegar a la carpeta 'web'
+cd "$(dirname "$0")/../web" || exit 1
+
+# Ejecutar npm install
+echo "Ejecutando npm install..."
+npm install 
+
+if [ $? -eq 0 ]; then
+    echo "npm install se ejecutó correctamente"
+else
+    echo "Hay un error al ejecutar npm install"
+    exit 1
+fi
