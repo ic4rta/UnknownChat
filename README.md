@@ -1,5 +1,7 @@
 **UnknownChat is a private and temporary chat service hosted on tor that allows integration with proxychains and socat.**
 
+Thanks to [voros](https://github.com/vorosdev) for the script to automate deployment
+
 ## Install packages
 ### NetBSD
 ```ruby
@@ -33,6 +35,4 @@ socat TCP-LISTEN:<tor_port>,fork,bind=127.0.0.1 TCP:127.0.0.1:<local_port>
 --- 
 To do:
 
-- Adding a CLI argument to deploy services (unknown-chat.sh)
-- Adding a CLI argument to stop all services (socat, node, proxychains, tor), this includes deleting logs (unknown-chat.sh)
 - Function to upload files to the chat (the file must only exist in memory, nothing must be stored on the server-side)
