@@ -32,7 +32,3 @@ socat TCP-LISTEN:<tor_port>,fork,bind=127.0.0.1 TCP:127.0.0.1:<local_port>
 ```
 
 - If the service does not work, change the local port to `80`.
---- 
-To do:
-
-- Function to upload files to the chat (the file must only exist in memory, nothing must be stored on the server-side)
