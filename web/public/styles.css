@@ -5,16 +5,16 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #1e1e1e;
-    color: #98ff98;
+    background-color: #040D12;
+    color: #EEEEEE;
 }
 
 #login, #chat {
-    background: #1e1e1e;
+    background: #040D12;
     padding: 15px;
     border-radius: 0;
     box-shadow: none;
-    border: 1px solid #4caf50;
+    border: 1px solid #5C8374;
 }
 
 #login {
@@ -31,7 +31,7 @@ body {
 
 #login h2, #chat h2 {
     margin: 0 0 20px;
-    color: #4caf50;
+    color: #EEEEEE;
     text-align: center;
 }
 
@@ -39,23 +39,51 @@ input[type="text"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #4caf50;
-    background-color: #1e1e1e;
-    color: #98ff98;
+    border: 1px solid #5C8374;
+    background-color: #040D12;
+    color: #EEEEEE;
     border-radius: 0;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #1e1e1e;
-    border: 1px solid #4caf50;
-    color: #98ff98;
+input[type="file"] {
+    width: calc(100% - 110px);
+    padding: 10px;
+    border: 1px solid #5C8374;
+    background-color: #040D12;
+    color: #EEEEEE;
     border-radius: 0;
     cursor: pointer;
 }
 
+#fileContainer {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #040D12;
+    border: 1px solid #5C8374;
+    color: #EEEEEE;
+    border-radius: 0;
+    cursor: pointer;
+    height: 42px;
+}
+
+#uploadButton {
+    width: 80px;
+    height: 44px;
+}
+
+#sendButton {
+    width: 80px;
+    height: 38px;
+    margin-top: 10px;
+}
+
 button:hover {
-    background-color: #4caf50;
+    background-color: #5C8374;
     color: #2c2c2c;
 }
 
@@ -69,12 +97,13 @@ button:hover {
 }
 
 #userList {
-    width: 150px;
+    width: 130px;
     margin-right: 20px;
-    border: 1px solid #4caf50;
+    border: 1px solid #5C8374;
     padding: 10px;
-    background: #1e1e1e;
+    background: #040D12;
     overflow-y: auto;
+    text-align: center;
 }
 
 #messagesContainer {
@@ -88,15 +117,15 @@ button:hover {
     flex: 1;
     overflow-y: auto;
     margin-bottom: 10px;
-    border: 1px solid #4caf50;
+    border: 1px solid #5C8374;
     padding: 10px;
-    background: #1e1e1e;
+    background: #040D12;
     word-wrap: break-word;
 }
 
 .message {
     margin-bottom: 10px;
-    color: #98ff98;
+    color: #EEEEEE;
 }
 
 .message p {
@@ -106,7 +135,7 @@ button:hover {
 .message .nickname {
     font-weight: bold;
     display: inline;
-    color: #4caf50;
+    color: #5C8374;
 }
 
 #messageContainer {
@@ -117,7 +146,7 @@ button:hover {
 #message {
     flex: 1;
     padding: 10px;
-    border: 1px solid #4caf50;
-    background: #1e1e1e;
-    color: #98ff98;
+    border: 1px solid #5C8374;
+    background: #040D12;
+    color: #EEEEEE;
 }

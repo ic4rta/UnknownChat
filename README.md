@@ -26,7 +26,7 @@ socks4 77.89.224.146 5678 --> example
 ```
 4. Start socat, tor and proxychain as follows
 ```lua
-proxychains -f ../config/proxychains.conf node server.js <local_port>
+proxychains4 -f ../config/proxychains.conf node server.js <local_port>
 sudo tor -f config/torrc
 socat TCP-LISTEN:<tor_port>,fork,bind=127.0.0.1 TCP:127.0.0.1:<local_port>
 ```

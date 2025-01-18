@@ -3,4 +3,4 @@ SOCKSPort 9050
 Log notice syslog
 DataDirectory /var/lib/tor
 HiddenServiceDir /var/lib/tor/hidden_service/
-HiddenServicePort 8080 127.0.0.1:8080
+HiddenServicePort 3000 127.0.0.1:8080

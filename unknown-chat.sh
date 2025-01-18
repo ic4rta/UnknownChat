@@ -92,7 +92,7 @@ ejecutar(){
   echo "Ejecutando proxychains..."
   # Guardar la salida completa de proxychains en una variable
   cd "$(dirname "$0")/web"
-  proxychains -f ../config/proxychains.conf node server.js $LOCAL_PORT
+  proxychains4 -f ../config/proxychains.conf node server.js $LOCAL_PORT
 }
 
 # Habilitar la depuración para ver cada comando ejecutado

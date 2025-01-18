@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const messagesDiv = document.getElementById('messages');
     const loginError = document.getElementById('loginError');
     const userListDiv = document.getElementById('userList');
+    const fileInput = document.getElementById('fileInput');
+    const uploadButton = document.getElementById('uploadButton');
 
     let nickname = '';
 
@@ -44,6 +46,41 @@ document.addEventListener('DOMContentLoaded', () => {
         messageElement.classList.add('message');
         messageElement.textContent = `${data.nickname}: ${data.message}`;
         messagesDiv.appendChild(messageElement);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    });
+
+    uploadButton.addEventListener('click', () => {
+        const file = fileInput.files[0];
+        if (file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+                fileInput.value = '';
+            })
+            .catch(error => {
+                console.error('Cant upload file:', error);
+            });
+        }
+    });
+
+    socket.on('fileMessage', (data) => {
+        const fileElement = document.createElement('div');
+        fileElement.classList.add('file');
+
+        const link = document.createElement('a');
+        link.href = `data:${data.filetype};base64,${data.data}`;
+        link.download = data.filename;
+        link.textContent = `${data.filename}`;
+
+        fileElement.appendChild(link);
+        messagesDiv.appendChild(fileElement);
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
     });
 
